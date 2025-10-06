@@ -1,0 +1,42 @@
+`timescale 1ps/1ps
+module mic_load #(parameter N=16) (
+    input  logic bclk,       // bit clock from ADC
+    input  logic adclrc,     // word select (left/right channel)
+    input  logic adcdat,     // serial data from ADC
+    output logic valid,      // pulses high when full word captured
+    output logic [N-1:0] sample_data // parallel word output
+);
+
+    logic [N-1:0] temp_rx_data;
+    logic [4:0] bit_index_counter;  
+    logic adclrc_q;
+    logic redge_adclrc;
+
+    // detect rising edge of adclrc
+    always_ff @(posedge bclk) begin
+        adclrc_q <= adclrc;
+        redge_adclrc <= adclrc & ~adclrc_q;     // redge pulse will be 1
+    end
+
+    // shift in bits
+    always_ff @(posedge bclk) begin
+        valid <= 0;
+
+        if (redge_adclrc) begin
+            // Start new word — capture MSB immediately
+            temp_rx_data[N-1] <= adcdat;
+            bit_index_counter <= 1;
+        end
+        else if (bit_index_counter > 0 && bit_index_counter < N) begin
+            // Capture remaining bits
+            temp_rx_data[N-1-bit_index_counter] <= adcdat;
+            bit_index_counter <= bit_index_counter + 1;
+
+            if (bit_index_counter == N-1) begin
+                sample_data <= temp_rx_data; // now has full word
+                valid <= 1;
+            end
+        end
+    end
+endmodule
+

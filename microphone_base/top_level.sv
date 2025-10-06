@@ -1,0 +1,66 @@
+
+// Takes in 16-bit audio data and displays volume level on board LEDs
+
+module top_level #(
+	parameter int DE1_SOC=1 // !!!IMPORTANT: Set this to 1 for DE1 or 0 for DE2
+) (
+	input CLOCK_50,
+
+	// DE1-SoC I2C to WM8731:
+	output         FPGA_I2C_SCLK,
+	inout          FPGA_I2C_SDAT,
+	
+	// DE2-115 I2C to WM8731:
+	output         I2C_SCLK,
+	inout          I2C_SDAT,
+
+	input         AUD_ADCDAT,
+	input         AUD_BCLK,
+	output        AUD_XCK,
+	input         AUD_ADCLRCK,
+
+	output  logic [17:0] LEDR
+);
+	logic [15:0] DE_LEDR; // Accounts for the different number of LEDs on the DE1-Soc vs. DE2-115.
+	
+	
+
+	logic adc_clk; adc_pll adc_pll_u (.areset(1'b0),.inclk0(CLOCK_50),.c0(adc_clk)); // generate 18.432 MHz clock
+	logic i2c_clk; i2c_pll i2c_pll_u (.areset(1'b0),.inclk0(CLOCK_50),.c0(i2c_clk)); // generate 20 kHz clock
+	
+	generate
+		if (DE1_SOC) begin : DE1_SOC_VS_DE2_115_CHANGES
+			set_audio_encoder set_codec_de1_soc (.i2c_clk(i2c_clk), .I2C_SCLK(FPGA_I2C_SCLK), .I2C_SDAT(FPGA_I2C_SDAT)); // Connected to the DE1-SoC I2C pins
+			assign LEDR[9:0]   = DE_LEDR[15:6]; // Take the 10 most significant data bits for the 10x DE1-SoC LEDs (pad the left 8 with zeros)
+			assign LEDR[17:10] = 8'hFF; // Tie-off these unecessary ports to one
+			assign I2C_SCLK = 1'b1;
+			assign I2C_SDAT = 1'bZ;
+				
+		end 
+		
+		else begin
+			set_audio_encoder set_codec_de2_115 (.i2c_clk(i2c_clk), .I2C_SCLK(I2C_SCLK), .I2C_SDAT(I2C_SDAT)); // Connected to the DE2-115 I2C pins
+			assign LEDR = {2'b0, DE_LEDR}; // Use all 16 data bits for the 18x DE2-115 LEDs (pad the left with 2x zeros)
+			assign FPGA_I2C_SCLK = 1'b1; // Tie-off these unecessary ports to one
+			assign FPGA_I2C_SDAT = 1'bZ;
+		end
+	endgenerate
+
+	logic [15:0] data;
+		
+    mic_load #(.N(16)) u_mic_load (
+      .adclrc(AUD_ADCLRCK),
+      .bclk(AUD_BCLK),
+      .adcdat(AUD_ADCDAT),
+      .sample_data(data)
+	);
+	
+	assign AUD_XCK = adc_clk;
+		
+	always_comb begin
+		if (data[15]) DE_LEDR <= (~data + 1); // magnitude of a negative number (2's complement).
+		else DE_LEDR <= data;
+	end
+
+endmodule
+

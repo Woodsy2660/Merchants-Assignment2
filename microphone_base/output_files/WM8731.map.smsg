@@ -1,2 +1,2 @@
-Info (10281): Verilog HDL Declaration information at i2c_master.sv(10): object "reg_addr" differs only in case from object "REG_ADDR" in the same scope File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_master.sv Line: 10
-Warning (10268): Verilog HDL information at mic_load.sv(18): always construct contains both blocking and non-blocking assignments File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/mic_load.sv Line: 18
+Info (10281): Verilog HDL Declaration information at i2c_master.sv(10): object "reg_addr" differs only in case from object "REG_ADDR" in the same scope File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_master.sv Line: 10
+Warning (10268): Verilog HDL information at mic_load.sv(18): always construct contains both blocking and non-blocking assignments File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/mic_load.sv Line: 18

@@ -1,0 +1,165 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'adc_clk'
+Slack : 40.148
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'AUD_BCLK'
+Slack : 302.466
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'i2c_clk'
+Slack : 49997.728
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'AUD_BCLK'
+Slack : 0.190
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'i2c_clk'
+Slack : 0.217
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'adc_clk'
+Slack : 0.246
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.670
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'adc_clk'
+Slack : 25.902
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'AUD_BCLK'
+Slack : 161.575
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'i2c_clk'
+Slack : 24999.291
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'adc_clk'
+Slack : 40.753
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'AUD_BCLK'
+Slack : 302.375
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'i2c_clk'
+Slack : 49997.731
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'AUD_BCLK'
+Slack : 0.069
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'i2c_clk'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'adc_clk'
+Slack : 0.229
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.673
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'adc_clk'
+Slack : 25.885
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'AUD_BCLK'
+Slack : 161.543
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'i2c_clk'
+Slack : 24999.238
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'adc_clk'
+Slack : 43.998
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'AUD_BCLK'
+Slack : 311.214
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'i2c_clk'
+Slack : 49998.760
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'i2c_clk'
+Slack : 0.133
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'AUD_BCLK'
+Slack : 0.142
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'adc_clk'
+Slack : 0.144
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.336
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'adc_clk'
+Slack : 26.015
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'AUD_BCLK'
+Slack : 161.099
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'i2c_clk'
+Slack : 24999.548
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'adc_clk'
+Slack : 45.353
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'AUD_BCLK'
+Slack : 312.411
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'i2c_clk'
+Slack : 49998.848
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'AUD_BCLK'
+Slack : 0.054
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'i2c_clk'
+Slack : 0.121
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'adc_clk'
+Slack : 0.131
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.286
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'adc_clk'
+Slack : 26.015
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'AUD_BCLK'
+Slack : 161.041
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'i2c_clk'
+Slack : 24999.539
+TNS   : 0.000
+
+------------------------------------------------------------

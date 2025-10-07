@@ -1,0 +1,20 @@
+Fitter Status : Successful - Tue Oct 07 18:59:55 2025
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : FFT_stream
+Top-level Entity Name : top_level
+Family : Cyclone V
+Device : 5CSEMA5F31C6
+Timing Models : Final
+Logic utilization (in ALMs) : 8,025 / 32,070 ( 25 % )
+Total registers : 12880
+Total pins : 41 / 457 ( 9 % )
+Total virtual pins : 0
+Total block memory bits : 41,344 / 4,065,280 ( 1 % )
+Total RAM Blocks : 10 / 397 ( 3 % )
+Total DSP Blocks : 87 / 87 ( 100 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 2 / 6 ( 33 % )
+Total DLLs : 0 / 4 ( 0 % )

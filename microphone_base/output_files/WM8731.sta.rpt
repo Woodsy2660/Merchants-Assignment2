@@ -1,5 +1,5 @@
 Timing Analyzer report for WM8731
-Mon Oct 06 16:27:53 2025
+Tue Oct 07 18:07:52 2025
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -106,12 +106,12 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.0%      ;
-;     Processor 3            ;   2.0%      ;
-;     Processor 4            ;   1.9%      ;
-;     Processor 5            ;   1.9%      ;
-;     Processor 6            ;   1.9%      ;
-;     Processor 7            ;   1.8%      ;
+;     Processor 2            ;   1.9%      ;
+;     Processor 3            ;   1.8%      ;
+;     Processor 4            ;   1.8%      ;
+;     Processor 5            ;   1.7%      ;
+;     Processor 6            ;   1.6%      ;
+;     Processor 7            ;   1.6%      ;
 ;     Processors 8-16        ;   0.8%      ;
 +----------------------------+-------------+
 
@@ -121,7 +121,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------+--------+--------------------------+
 ; SDC File Path  ; Status ; Read at                  ;
 +----------------+--------+--------------------------+
-; WM8731.out.sdc ; OK     ; Mon Oct 06 16:27:50 2025 ;
+; WM8731.out.sdc ; OK     ; Tue Oct 07 18:07:46 2025 ;
 +----------------+--------+--------------------------+
 
 
@@ -668,7 +668,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Oct 06 16:27:49 2025
+    Info: Processing started: Tue Oct 07 18:07:43 2025
 Info: Command: quartus_sta WM8731 -c WM8731
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -790,8 +790,8 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 13 warnings
     Info: Peak virtual memory: 5316 megabytes
-    Info: Processing ended: Mon Oct 06 16:27:53 2025
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Processing ended: Tue Oct 07 18:07:52 2025
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:07
 
 

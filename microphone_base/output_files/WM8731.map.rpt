@@ -1,5 +1,5 @@
 Analysis & Synthesis report for WM8731
-Mon Oct 06 16:27:07 2025
+Tue Oct 07 18:05:21 2025
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -59,7 +59,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Oct 06 16:27:07 2025       ;
+; Analysis & Synthesis Status     ; Successful - Tue Oct 07 18:05:21 2025       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; WM8731                                      ;
 ; Top-level Entity Name           ; top_level                                   ;
@@ -183,25 +183,25 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                           ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                       ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
-; set_audio_encoder.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/set_audio_encoder.sv ;         ;
-; i2c_master.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_master.sv        ;         ;
-; mic_load.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/mic_load.sv          ;         ;
-; top_level.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv         ;         ;
-; adc_pll.v                        ; yes             ; User Wizard-Generated File   ; C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/adc_pll.v            ;         ;
-; i2c_pll.v                        ; yes             ; User Wizard-Generated File   ; C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_pll.v            ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf                  ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc              ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc             ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc           ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cycloneii_pll.inc           ;         ;
-; db/adc_pll_altpll.v              ; yes             ; Auto-Generated Megafunction  ; C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/db/adc_pll_altpll.v  ;         ;
-; db/i2c_pll_altpll.v              ; yes             ; Auto-Generated Megafunction  ; C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/db/i2c_pll_altpll.v  ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; set_audio_encoder.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/set_audio_encoder.sv ;         ;
+; i2c_master.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_master.sv        ;         ;
+; mic_load.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/mic_load.sv          ;         ;
+; top_level.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv         ;         ;
+; adc_pll.v                        ; yes             ; User Wizard-Generated File   ; C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/adc_pll.v            ;         ;
+; i2c_pll.v                        ; yes             ; User Wizard-Generated File   ; C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_pll.v            ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf                          ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                      ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc                     ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc                   ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cycloneii_pll.inc                   ;         ;
+; db/adc_pll_altpll.v              ; yes             ; Auto-Generated Megafunction  ; C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/db/adc_pll_altpll.v  ;         ;
+; db/i2c_pll_altpll.v              ; yes             ; Auto-Generated Megafunction  ; C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/db/i2c_pll_altpll.v  ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1247,7 +1247,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1257,28 +1257,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Oct 06 16:27:01 2025
+    Info: Processing started: Tue Oct 07 18:04:35 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off WM8731 -c WM8731
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file set_audio_encoder.sv
-    Info (12023): Found entity 1: set_audio_encoder File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/set_audio_encoder.sv Line: 1
+    Info (12023): Found entity 1: set_audio_encoder File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/set_audio_encoder.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file i2c_master.sv
-    Info (12023): Found entity 1: i2c_master File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_master.sv Line: 2
+    Info (12023): Found entity 1: i2c_master File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_master.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file mic_load.sv
-    Info (12023): Found entity 1: mic_load File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/mic_load.sv Line: 4
+    Info (12023): Found entity 1: mic_load File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/mic_load.sv Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file top_level.sv
-    Info (12023): Found entity 1: top_level File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 4
+    Info (12023): Found entity 1: top_level File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file adc_pll.v
-    Info (12023): Found entity 1: adc_pll File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/adc_pll.v Line: 40
+    Info (12023): Found entity 1: adc_pll File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/adc_pll.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file i2c_pll.v
-    Info (12023): Found entity 1: i2c_pll File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_pll.v Line: 40
+    Info (12023): Found entity 1: i2c_pll File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_pll.v Line: 40
 Info (12127): Elaborating entity "top_level" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at top_level.sv(60): truncated value with size 32 to match size of target (16) File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 60
-Info (12128): Elaborating entity "adc_pll" for hierarchy "adc_pll:adc_pll_u" File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 27
-Info (12128): Elaborating entity "altpll" for hierarchy "adc_pll:adc_pll_u|altpll:altpll_component" File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/adc_pll.v Line: 104
-Info (12130): Elaborated megafunction instantiation "adc_pll:adc_pll_u|altpll:altpll_component" File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/adc_pll.v Line: 104
-Info (12133): Instantiated megafunction "adc_pll:adc_pll_u|altpll:altpll_component" with the following parameter: File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/adc_pll.v Line: 104
+Warning (10230): Verilog HDL assignment warning at top_level.sv(61): truncated value with size 32 to match size of target (16) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 61
+Info (12128): Elaborating entity "adc_pll" for hierarchy "adc_pll:adc_pll_u" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 28
+Info (12128): Elaborating entity "altpll" for hierarchy "adc_pll:adc_pll_u|altpll:altpll_component" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/adc_pll.v Line: 104
+Info (12130): Elaborated megafunction instantiation "adc_pll:adc_pll_u|altpll:altpll_component" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/adc_pll.v Line: 104
+Info (12133): Instantiated megafunction "adc_pll:adc_pll_u|altpll:altpll_component" with the following parameter: File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/adc_pll.v Line: 104
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "3125"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1335,12 +1335,12 @@ Info (12133): Instantiated megafunction "adc_pll:adc_pll_u|altpll:altpll_compone
     Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/adc_pll_altpll.v
-    Info (12023): Found entity 1: adc_pll_altpll File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/db/adc_pll_altpll.v Line: 30
+    Info (12023): Found entity 1: adc_pll_altpll File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/db/adc_pll_altpll.v Line: 30
 Info (12128): Elaborating entity "adc_pll_altpll" for hierarchy "adc_pll:adc_pll_u|altpll:altpll_component|adc_pll_altpll:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "i2c_pll" for hierarchy "i2c_pll:i2c_pll_u" File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 28
-Info (12128): Elaborating entity "altpll" for hierarchy "i2c_pll:i2c_pll_u|altpll:altpll_component" File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_pll.v Line: 104
-Info (12130): Elaborated megafunction instantiation "i2c_pll:i2c_pll_u|altpll:altpll_component" File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_pll.v Line: 104
-Info (12133): Instantiated megafunction "i2c_pll:i2c_pll_u|altpll:altpll_component" with the following parameter: File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_pll.v Line: 104
+Info (12128): Elaborating entity "i2c_pll" for hierarchy "i2c_pll:i2c_pll_u" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 29
+Info (12128): Elaborating entity "altpll" for hierarchy "i2c_pll:i2c_pll_u|altpll:altpll_component" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_pll.v Line: 104
+Info (12130): Elaborated megafunction instantiation "i2c_pll:i2c_pll_u|altpll:altpll_component" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_pll.v Line: 104
+Info (12133): Instantiated megafunction "i2c_pll:i2c_pll_u|altpll:altpll_component" with the following parameter: File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_pll.v Line: 104
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "2500"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1397,41 +1397,41 @@ Info (12133): Instantiated megafunction "i2c_pll:i2c_pll_u|altpll:altpll_compone
     Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/i2c_pll_altpll.v
-    Info (12023): Found entity 1: i2c_pll_altpll File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/db/i2c_pll_altpll.v Line: 30
+    Info (12023): Found entity 1: i2c_pll_altpll File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/db/i2c_pll_altpll.v Line: 30
 Info (12128): Elaborating entity "i2c_pll_altpll" for hierarchy "i2c_pll:i2c_pll_u|altpll:altpll_component|i2c_pll_altpll:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "set_audio_encoder" for hierarchy "set_audio_encoder:DE1_SOC_VS_DE2_115_CHANGES.set_codec_de1_soc" File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 32
-Warning (10036): Verilog HDL or VHDL warning at set_audio_encoder.sv(30): object "done" assigned a value but never read File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/set_audio_encoder.sv Line: 30
-Warning (10230): Verilog HDL assignment warning at set_audio_encoder.sv(37): truncated value with size 32 to match size of target (4) File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/set_audio_encoder.sv Line: 37
-Info (10264): Verilog HDL Case Statement information at set_audio_encoder.sv(35): all case item expressions in this case statement are onehot File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/set_audio_encoder.sv Line: 35
-Info (12128): Elaborating entity "i2c_master" for hierarchy "set_audio_encoder:DE1_SOC_VS_DE2_115_CHANGES.set_codec_de1_soc|i2c_master:u1" File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/set_audio_encoder.sv Line: 11
-Warning (10230): Verilog HDL assignment warning at i2c_master.sv(29): truncated value with size 32 to match size of target (1) File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_master.sv Line: 29
-Info (10264): Verilog HDL Case Statement information at i2c_master.sv(61): all case item expressions in this case statement are onehot File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_master.sv Line: 61
-Warning (10230): Verilog HDL assignment warning at i2c_master.sv(68): truncated value with size 32 to match size of target (3) File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_master.sv Line: 68
-Warning (10270): Verilog HDL Case Statement warning at i2c_master.sv(83): incomplete case statement has no default case item File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_master.sv Line: 83
-Info (10264): Verilog HDL Case Statement information at i2c_master.sv(83): all case item expressions in this case statement are onehot File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_master.sv Line: 83
-Warning (10034): Output port "read_data" at i2c_master.sv(16) has no driver File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_master.sv Line: 16
-Warning (10034): Output port "read_valid" at i2c_master.sv(17) has no driver File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/i2c_master.sv Line: 17
-Info (12128): Elaborating entity "mic_load" for hierarchy "mic_load:u_mic_load" File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 55
-Warning (10230): Verilog HDL assignment warning at mic_load.sv(46): truncated value with size 32 to match size of target (5) File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/mic_load.sv Line: 46
+Info (12128): Elaborating entity "set_audio_encoder" for hierarchy "set_audio_encoder:DE1_SOC_VS_DE2_115_CHANGES.set_codec_de1_soc" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 33
+Warning (10036): Verilog HDL or VHDL warning at set_audio_encoder.sv(30): object "done" assigned a value but never read File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/set_audio_encoder.sv Line: 30
+Warning (10230): Verilog HDL assignment warning at set_audio_encoder.sv(37): truncated value with size 32 to match size of target (4) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/set_audio_encoder.sv Line: 37
+Info (10264): Verilog HDL Case Statement information at set_audio_encoder.sv(35): all case item expressions in this case statement are onehot File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/set_audio_encoder.sv Line: 35
+Info (12128): Elaborating entity "i2c_master" for hierarchy "set_audio_encoder:DE1_SOC_VS_DE2_115_CHANGES.set_codec_de1_soc|i2c_master:u1" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/set_audio_encoder.sv Line: 11
+Warning (10230): Verilog HDL assignment warning at i2c_master.sv(29): truncated value with size 32 to match size of target (1) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_master.sv Line: 29
+Info (10264): Verilog HDL Case Statement information at i2c_master.sv(61): all case item expressions in this case statement are onehot File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_master.sv Line: 61
+Warning (10230): Verilog HDL assignment warning at i2c_master.sv(68): truncated value with size 32 to match size of target (3) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_master.sv Line: 68
+Warning (10270): Verilog HDL Case Statement warning at i2c_master.sv(83): incomplete case statement has no default case item File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_master.sv Line: 83
+Info (10264): Verilog HDL Case Statement information at i2c_master.sv(83): all case item expressions in this case statement are onehot File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_master.sv Line: 83
+Warning (10034): Output port "read_data" at i2c_master.sv(16) has no driver File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_master.sv Line: 16
+Warning (10034): Output port "read_valid" at i2c_master.sv(17) has no driver File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/i2c_master.sv Line: 17
+Info (12128): Elaborating entity "mic_load" for hierarchy "mic_load:u_mic_load" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 56
+Warning (10230): Verilog HDL assignment warning at mic_load.sv(46): truncated value with size 32 to match size of target (5) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/mic_load.sv Line: 46
 Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "I2C_SCLK" is stuck at VCC File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 13
-    Warning (13410): Pin "LEDR[10]" is stuck at VCC File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 22
-    Warning (13410): Pin "LEDR[11]" is stuck at VCC File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 22
-    Warning (13410): Pin "LEDR[12]" is stuck at VCC File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 22
-    Warning (13410): Pin "LEDR[13]" is stuck at VCC File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 22
-    Warning (13410): Pin "LEDR[14]" is stuck at VCC File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 22
-    Warning (13410): Pin "LEDR[15]" is stuck at VCC File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 22
-    Warning (13410): Pin "LEDR[16]" is stuck at VCC File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 22
-    Warning (13410): Pin "LEDR[17]" is stuck at VCC File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/top_level.sv Line: 22
+    Warning (13410): Pin "I2C_SCLK" is stuck at VCC File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 14
+    Warning (13410): Pin "LEDR[10]" is stuck at VCC File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 23
+    Warning (13410): Pin "LEDR[11]" is stuck at VCC File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 23
+    Warning (13410): Pin "LEDR[12]" is stuck at VCC File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 23
+    Warning (13410): Pin "LEDR[13]" is stuck at VCC File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 23
+    Warning (13410): Pin "LEDR[14]" is stuck at VCC File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 23
+    Warning (13410): Pin "LEDR[15]" is stuck at VCC File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 23
+    Warning (13410): Pin "LEDR[16]" is stuck at VCC File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 23
+    Warning (13410): Pin "LEDR[17]" is stuck at VCC File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/top_level.sv Line: 23
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/output_files/WM8731.map.smsg
+Info (144001): Generated suppressed messages file C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/output_files/WM8731.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 6 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
-Warning: RST port on the PLL is not properly connected on instance i2c_pll:i2c_pll_u|altpll:altpll_component|i2c_pll_altpll:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/db/i2c_pll_altpll.v Line: 63
+Warning: RST port on the PLL is not properly connected on instance i2c_pll:i2c_pll_u|altpll:altpll_component|i2c_pll_altpll:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/db/i2c_pll_altpll.v Line: 63
     Info: Must be connected
-Warning: RST port on the PLL is not properly connected on instance adc_pll:adc_pll_u|altpll:altpll_component|adc_pll_altpll:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/db/adc_pll_altpll.v Line: 63
+Warning: RST port on the PLL is not properly connected on instance adc_pll:adc_pll_u|altpll:altpll_component|adc_pll_altpll:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/db/adc_pll_altpll.v Line: 63
     Info: Must be connected
 Info (21057): Implemented 169 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
@@ -1440,15 +1440,15 @@ Info (21057): Implemented 169 device resources after synthesis - the final resou
     Info (21061): Implemented 140 logic cells
     Info (21065): Implemented 2 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 4870 megabytes
-    Info: Processing ended: Mon Oct 06 16:27:07 2025
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 4925 megabytes
+    Info: Processing ended: Tue Oct 07 18:05:21 2025
+    Info: Elapsed time: 00:00:46
+    Info: Total CPU time (on all processors): 00:00:38
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/jiaho/Documents/USYD4thYear2025/MTRX3700/microphone3/output_files/WM8731.map.smsg.
+The suppressed messages can be found in C:/Users/jiaho/Documents/Github/Merchants-Assignment2/microphone_base/output_files/WM8731.map.smsg.
 
 

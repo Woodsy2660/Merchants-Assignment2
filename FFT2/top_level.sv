@@ -14,6 +14,7 @@ module top_level #(
 	output [6:0] HEX1,
 	output [6:0] HEX2,
 	output [6:0] HEX3,
+	output [9:0] LEDR,      // Red LEDs for beat display
 	input  [3:0] KEY,
 	input		AUD_ADCDAT,
 	input       AUD_BCLK,     // 3.072 MHz clock from the WM8731
@@ -94,6 +95,9 @@ module top_level #(
 	);
 	
 	logic [$clog2(NSamples)-1:0] pitch_output_data;
+	logic [W*2:0] fft_mag_sq;
+	logic [$clog2(NSamples)-1:0] fft_bin_index;
+	logic fft_mag_valid;
 	
 	fft_pitch_detect #(.W(W), .NSamples(NSamples)) u_fft_pitch_detect (
 	    .audio_clk(audio_clk),
@@ -102,14 +106,45 @@ module top_level #(
 	    .audio_input_data(audio_input_data),
 	    .audio_input_valid(audio_input_valid),
 	    .pitch_output_data(pitch_output_data),
-	    .pitch_output_valid()
+	    .pitch_output_valid(),
+	    // Beat detection outputs
+	    .fft_mag_sq_out(fft_mag_sq),
+	    .fft_bin_index_out(fft_bin_index),
+	    .fft_mag_valid_out(fft_mag_valid)
 	);
 	
 
-	// Display (for peak `k` FFT index displayed on HEX0-HEX3):
+	// Beat Detection System
+	logic beat_pulse, snare_pulse, hihat_pulse;
+	logic [7:0] bpm_value;
+	
+	beat_detector u_beat_detector (
+		.clk(adc_clk),
+		.reset(reset),
+		.fft_mag_sq(fft_mag_sq),
+		.fft_bin_index(fft_bin_index[9:0]), // Only need lower 10 bits for 1024 samples
+		.fft_valid(fft_mag_valid),
+		.beat_pulse(beat_pulse),
+		.snare_pulse(snare_pulse),
+		.hihat_pulse(hihat_pulse),
+		.bpm_value(bpm_value)
+	);
+	
+	// LED Display for Beat Visualization
+	beat_led_display u_beat_led_display (
+		.clk(CLOCK_50),  // Use 50MHz clock for LED timing
+		.reset(reset),
+		.beat_pulse(beat_pulse),
+		.snare_pulse(snare_pulse),
+		.hihat_pulse(hihat_pulse),
+		.bpm_value(bpm_value),
+		.LEDR(LEDR)
+	);
+
+	// Display BPM on 7-segment instead of pitch
 	display u_display (
 		.clk(adc_clk),
-		.value(pitch_output_data),
+		.value({2'b0, bpm_value}), // Display BPM instead of pitch
 		.display0(HEX0),
 		.display1(HEX1),
 		.display2(HEX2),

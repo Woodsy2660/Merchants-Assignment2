@@ -10,7 +10,12 @@ module fft_pitch_detect # (
 	 input logic audio_input_valid,
 	 
 	 output logic [$clog2(NSamples)-1:0] pitch_output_data,
-	 output logic pitch_output_valid 
+	 output logic pitch_output_valid,
+	 
+	 // Beat detection outputs
+	 output logic [W*2:0] fft_mag_sq_out,
+	 output logic [$clog2(NSamples)-1:0] fft_bin_index_out,
+	 output logic fft_mag_valid_out 
 );
 // Clock domain crossing:
 // - Input clock domain is audio_clk (3.072 MHz). This is AUD_BCLK, the 3.072 MHz clock from the WM8731.
@@ -101,6 +106,25 @@ module fft_pitch_detect # (
 		.mag_sq(mag_sq),
 		.mag_valid(mag_valid)
 	);
+
+	// Bin index counter for beat detection
+	logic [$clog2(NSamples)-1:0] bin_counter;
+	always_ff @(posedge fft_clk) begin
+		if (reset) begin
+			bin_counter <= 0;
+		end else if (mag_valid) begin
+			if (bin_counter == NSamples-1) begin
+				bin_counter <= 0;
+			end else begin
+				bin_counter <= bin_counter + 1;
+			end
+		end
+	end
+
+	// Connect beat detection outputs
+	assign fft_mag_sq_out = mag_sq;
+	assign fft_bin_index_out = bin_counter;
+	assign fft_mag_valid_out = mag_valid;
 
 	fft_find_peak #(.W(W*2+1),.NSamples(NSamples)) u_fft_find_peak (
 		.clk(fft_clk), 

@@ -14,6 +14,11 @@ module top_level #(
 	output [6:0] HEX1,
 	output [6:0] HEX2,
 	output [6:0] HEX3,
+	
+	// last 2 hexes for dB value
+	output [6:0] HEX4,
+	output [6:0] HEX5,
+	
 	output [9:0] LEDR,      // Red LEDs for beat display
 	input  [3:0] KEY,
 	input		AUD_ADCDAT,
@@ -130,6 +135,32 @@ module top_level #(
 		.bpm_value(bpm_value)
 	);
 	
+	
+	// Quiet period = when there's no beats
+	logic quiet_period;
+	
+	
+	assign quiet_period = ~(beat_pulse | snare_pulse | hihat_pulse);
+
+	snr_calculator #(
+		 .DATA_WIDTH(16),     // set the desired data width
+		 .SNR_WIDTH(8),       // set the width of SNR output
+		 .ALPHA_SHORT(16'd3277), // short MA alpha (Q1.15 fixed point)
+		 .ALPHA_LONG(16'd655)    // long MA alpha (Q1.15 fixed point)
+	) u_snr (
+		 .clk(clk),
+		 .reset(reset),
+		 .quiet_period(quiet_period),
+		 .audio_input(audio_input),
+		 .audio_input_valid(audio_input_valid),
+		 .audio_input_ready(audio_input_ready),
+		 .snr_db(snr_db),
+		 .signal_rms(signal_rms),
+		 .noise_rms(noise_rms),
+		 .output_valid(output_valid),
+		 .output_ready(output_ready)
+	);
+	
 	// LED Display for Beat Visualization
 	beat_led_display u_beat_led_display (
 		.clk(CLOCK_50),  // Use 50MHz clock for LED timing
@@ -144,11 +175,14 @@ module top_level #(
 	// Display BPM on 7-segment instead of pitch
 	display u_display (
 		.clk(adc_clk),
-		.value({2'b0, bpm_value}), // Display BPM instead of pitch
+		.snr_value(snr_value),   // display snr
+		.bpm_value(bpm_value),   // display bpm (see edits in display.sv)
 		.display0(HEX0),
 		.display1(HEX1),
 		.display2(HEX2),
-		.display3(HEX3)
+		.display3(HEX3),
+		.display4(HEX4),
+		.display5(HEX5)
 	);
 
 endmodule

@@ -1,5 +1,5 @@
 EDA Netlist Writer report for FFT_stream
-Tue Oct 07 19:00:51 2025
+Thu Oct 09 02:43:22 2025
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Oct 07 19:00:51 2025 ;
+; EDA Netlist Writer Status ; Successful - Thu Oct 09 02:43:22 2025 ;
 ; Revision Name             ; FFT_stream                            ;
 ; Top-level Entity Name     ; top_level                             ;
 ; Family                    ; Cyclone V                             ;
@@ -66,13 +66,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                  ;
-+---------------------------------------------------------------------------------------------+
-; Generated Files                                                                             ;
-+---------------------------------------------------------------------------------------------+
-; C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT/simulation/modelsim/FFT_stream.vo ;
-+---------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                   ;
++----------------------------------------------------------------------------------------------+
+; Generated Files                                                                              ;
++----------------------------------------------------------------------------------------------+
+; C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/simulation/modelsim/FFT_stream.vo ;
++----------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -81,14 +81,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Oct 07 19:00:43 2025
+    Info: Processing started: Thu Oct 09 02:43:18 2025
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off FFT_stream -c FFT_stream
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file FFT_stream.vo in folder "C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file FFT_stream.vo in folder "C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 5001 megabytes
-    Info: Processing ended: Tue Oct 07 19:00:51 2025
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Peak virtual memory: 5026 megabytes
+    Info: Processing ended: Thu Oct 09 02:43:22 2025
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 

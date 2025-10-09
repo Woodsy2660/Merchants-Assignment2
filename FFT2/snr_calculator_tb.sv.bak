@@ -1,0 +1,98 @@
+
+`timescale 1ns/1ps
+
+module snr_calculator_tb;
+
+    // Parameters
+    parameter DATA_WIDTH = 16;
+    parameter SNR_WIDTH  = 8;
+    parameter ALPHA_SHORT = 16'd3277;  // Q1.15 ~0.1
+    parameter ALPHA_LONG  = 16'd655;   // Q1.15 ~0.02
+
+    // Clock and reset
+    logic clk;
+    logic reset;
+
+    // Inputs
+    logic [DATA_WIDTH-1:0] audio_input;
+    logic                  audio_input_valid;
+    logic                  output_ready = 1'b1;
+    logic                  quiet_period;
+
+    // Outputs
+    logic                  audio_input_ready;
+    logic [SNR_WIDTH-1:0]  snr_db;
+    logic [DATA_WIDTH-1:0] signal_rms;
+    logic [DATA_WIDTH-1:0] noise_rms;
+    logic                  output_valid;
+
+    // Instantiate DUT
+    snr_calculator #(
+        .DATA_WIDTH(DATA_WIDTH),
+        .SNR_WIDTH(SNR_WIDTH),
+        .ALPHA_SHORT(ALPHA_SHORT),
+        .ALPHA_LONG(ALPHA_LONG)
+    ) dut (
+        .clk(clk),
+        .reset(reset),
+        .quiet_period(quiet_period),
+        .audio_input(audio_input),
+        .audio_input_valid(audio_input_valid),
+        .audio_input_ready(audio_input_ready),
+        .snr_db(snr_db),
+        .signal_rms(signal_rms),
+        .noise_rms(noise_rms),
+        .output_valid(output_valid),
+        .output_ready(output_ready)
+    );
+
+    // Clock generation: 10ns period = 100 MHz
+    initial clk = 0;
+    always #5 clk = ~clk;
+
+    // Stimulus
+    initial begin
+        reset = 1;
+        audio_input = 0;
+        audio_input_valid = 0;
+        quiet_period = 0;
+
+        #20;
+        reset = 0;
+
+        // Feed a few "quiet" samples (simulate noise)
+        repeat (20) begin
+            @(posedge clk);
+            audio_input <= $urandom_range(0, 100); // low amplitude noise
+            audio_input_valid <= 1;
+        end
+
+        // Feed some "signal" samples (simulate beats)
+        repeat (30) begin
+            @(posedge clk);
+            audio_input <= $urandom_range(1000, 2000); // louder beats
+            audio_input_valid <= 1;
+        end
+
+        // Feed some quiet again
+        repeat (20) begin
+            @(posedge clk);
+            audio_input <= $urandom_range(0, 50);
+            audio_input_valid <= 1;
+        end
+
+        // Finish simulation
+        @(posedge clk);
+        audio_input_valid <= 0;
+        #50;
+        $stop;
+    end
+
+    // Monitor signals
+    initial begin
+        $display("Time\taudio_input\tsignal_rms\tnoise_rms\tsnr_db");
+        $monitor("%0t\t%0d\t\t%0d\t\t%0d\t\t%0d",
+                 $time, audio_input, signal_rms, noise_rms, snr_db);
+    end
+
+endmodule

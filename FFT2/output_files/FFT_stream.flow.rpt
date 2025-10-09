@@ -1,5 +1,5 @@
 Flow report for FFT_stream
-Thu Oct 09 02:52:31 2025
+Thu Oct 09 11:49:06 2025
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Thu Oct 09 02:52:31 2025       ;
+; Flow Status                 ; Successful - Thu Oct 09 11:49:06 2025       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; FFT_stream                                  ;
 ; Top-level Entity Name       ; top_level                                   ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/09/2025 02:52:23 ;
+; Start date & time ; 10/09/2025 11:48:56 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; FFT_stream          ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------+----------------------------------------+---------------+-------------+---------------------+
 ; Assignment Name                         ; Value                                  ; Default Value ; Entity Name ; Section Id          ;
 +-----------------------------------------+----------------------------------------+---------------+-------------+---------------------+
-; COMPILER_SIGNATURE_ID                   ; 216533926484366.175993874334384        ; --            ; --          ; --                  ;
+; COMPILER_SIGNATURE_ID                   ; 216533926484366.175997093510532        ; --            ; --          ; --                  ;
 ; EDA_DESIGN_INSTANCE_NAME                ; NA                                     ; --            ; --          ; fft_pitch_detect_tb ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH    ; fft_pitch_detect_tb                    ; --            ; --          ; eda_simulation      ;
 ; EDA_OUTPUT_DATA_FORMAT                  ; Verilog Hdl                            ; --            ; --          ; eda_simulation      ;
@@ -112,8 +112,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:08     ; 1.0                     ; 4969 MB             ; 00:00:16                           ;
-; Total                  ; 00:00:08     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Elaboration ; 00:00:11     ; 1.0                     ; 4961 MB             ; 00:00:15                           ;
+; Total                  ; 00:00:11     ; --                      ; --                  ; 00:00:15                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

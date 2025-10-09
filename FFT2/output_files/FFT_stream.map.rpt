@@ -1,5 +1,5 @@
 Analysis & Elaboration report for FFT_stream
-Thu Oct 09 02:52:31 2025
+Thu Oct 09 11:49:06 2025
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -118,7 +118,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Thu Oct 09 02:52:31 2025       ;
+; Analysis & Elaboration Status ; Successful - Thu Oct 09 11:49:06 2025       ;
 ; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                 ; FFT_stream                                  ;
 ; Top-level Entity Name         ; top_level                                   ;
@@ -1849,21 +1849,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "snr_calculator:u_snr"                                                                                                                                              ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port              ; Type   ; Severity ; Details                                                                                                                                               ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; audio_input       ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "audio_input[15..1]" will be connected to GND. ;
-; audio_input_ready ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                   ;
-; snr_db            ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "snr_db[7..1]" have no fanouts                             ;
-; snr_db            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                   ;
-; signal_rms        ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "signal_rms[15..1]" have no fanouts                       ;
-; signal_rms        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                   ;
-; noise_rms         ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "noise_rms[15..1]" have no fanouts                        ;
-; noise_rms         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                   ;
-; output_valid      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                   ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "snr_calculator:u_snr"                                                                            ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; audio_input_ready ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; snr_db            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; signal_rms        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; noise_rms         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; output_valid      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1999,7 +1995,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Oct 09 02:52:23 2025
+    Info: Processing started: Thu Oct 09 11:48:55 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FFT_stream -c FFT_stream --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -2061,15 +2057,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file log10_l
     Info (12023): Found entity 1: log10_lut File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/log10_lut.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file snr_calculator_tb.sv
     Info (12023): Found entity 1: snr_calculator_tb File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/snr_calculator_tb.sv Line: 2
-Warning (10236): Verilog HDL Implicit Net warning at top_level.sv(151): created implicit net for "clk" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 151
-Warning (10236): Verilog HDL Implicit Net warning at top_level.sv(154): created implicit net for "audio_input" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 154
-Warning (10236): Verilog HDL Implicit Net warning at top_level.sv(156): created implicit net for "audio_input_ready" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 156
-Warning (10236): Verilog HDL Implicit Net warning at top_level.sv(157): created implicit net for "snr_db" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 157
-Warning (10236): Verilog HDL Implicit Net warning at top_level.sv(158): created implicit net for "signal_rms" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 158
-Warning (10236): Verilog HDL Implicit Net warning at top_level.sv(159): created implicit net for "noise_rms" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 159
-Warning (10236): Verilog HDL Implicit Net warning at top_level.sv(160): created implicit net for "output_valid" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 160
-Warning (10236): Verilog HDL Implicit Net warning at top_level.sv(161): created implicit net for "output_ready" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 161
-Warning (10236): Verilog HDL Implicit Net warning at top_level.sv(178): created implicit net for "snr_value" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 178
+Warning (10236): Verilog HDL Implicit Net warning at top_level.sv(182): created implicit net for "snr_value" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 182
 Info (12127): Elaborating entity "top_level" for the top level hierarchy
 Info (12128): Elaborating entity "i2c_pll" for hierarchy "i2c_pll:i2c_pll_u" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 69
 Info (12128): Elaborating entity "altpll" for hierarchy "i2c_pll:i2c_pll_u|altpll:altpll_component" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/mic/i2c_pll.v Line: 104
@@ -2320,7 +2308,7 @@ Warning (10230): Verilog HDL assignment warning at beat_detector.sv(257): trunca
 Warning (10230): Verilog HDL assignment warning at beat_detector.sv(293): truncated value with size 32 to match size of target (16) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/beat_detector.sv Line: 293
 Warning (10230): Verilog HDL assignment warning at beat_detector.sv(307): truncated value with size 32 to match size of target (2) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/beat_detector.sv Line: 307
 Warning (10230): Verilog HDL assignment warning at beat_detector.sv(317): truncated value with size 20 to match size of target (8) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/beat_detector.sv Line: 317
-Info (12128): Elaborating entity "snr_calculator" for hierarchy "snr_calculator:u_snr" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 162
+Info (12128): Elaborating entity "snr_calculator" for hierarchy "snr_calculator:u_snr" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 165
 Warning (10230): Verilog HDL assignment warning at snr_calculator.sv(86): truncated value with size 32 to match size of target (16) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/snr_calculator.sv Line: 86
 Warning (10230): Verilog HDL assignment warning at snr_calculator.sv(97): truncated value with size 32 to match size of target (16) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/snr_calculator.sv Line: 97
 Warning (10230): Verilog HDL assignment warning at snr_calculator.sv(110): truncated value with size 32 to match size of target (16) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/snr_calculator.sv Line: 110
@@ -2330,7 +2318,7 @@ Warning (10240): Verilog HDL Always Construct warning at snr_calculator.sv(73): 
 Warning (10240): Verilog HDL Always Construct warning at snr_calculator.sv(73): inferring latch(es) for variable "audio_input_ready", which holds its previous value in one or more paths through the always construct File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/snr_calculator.sv Line: 73
 Info (10041): Inferred latch for "audio_input_ready" at snr_calculator.sv(73) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/snr_calculator.sv Line: 73
 Info (10041): Inferred latch for "output_valid" at snr_calculator.sv(73) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/snr_calculator.sv Line: 73
-Info (12128): Elaborating entity "beat_led_display" for hierarchy "beat_led_display:u_beat_led_display" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 173
+Info (12128): Elaborating entity "beat_led_display" for hierarchy "beat_led_display:u_beat_led_display" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 177
 Warning (10259): Verilog HDL error at beat_led_display.sv(14): constant value overflow File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/beat_led_display.sv Line: 14
 Warning (10230): Verilog HDL assignment warning at beat_led_display.sv(31): truncated value with size 32 to match size of target (21) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/beat_led_display.sv Line: 31
 Warning (10230): Verilog HDL assignment warning at beat_led_display.sv(34): truncated value with size 32 to match size of target (21) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/beat_led_display.sv Line: 34
@@ -2339,7 +2327,7 @@ Warning (10230): Verilog HDL assignment warning at beat_led_display.sv(50): trun
 Warning (10230): Verilog HDL assignment warning at beat_led_display.sv(63): truncated value with size 32 to match size of target (21) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/beat_led_display.sv Line: 63
 Warning (10230): Verilog HDL assignment warning at beat_led_display.sv(66): truncated value with size 32 to match size of target (21) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/beat_led_display.sv Line: 66
 Warning (10230): Verilog HDL assignment warning at beat_led_display.sv(87): truncated value with size 32 to match size of target (3) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/beat_led_display.sv Line: 87
-Info (12128): Elaborating entity "display" for hierarchy "display:u_display" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 186
+Info (12128): Elaborating entity "display" for hierarchy "display:u_display" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/top_level.sv Line: 190
 Warning (10230): Verilog HDL assignment warning at display.sv(34): truncated value with size 32 to match size of target (4) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/display.sv Line: 34
 Warning (10270): Verilog HDL Case Statement warning at display.sv(42): incomplete case statement has no default case item File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/display.sv Line: 42
 Warning (10230): Verilog HDL assignment warning at display.sv(84): truncated value with size 32 to match size of target (4) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/display.sv Line: 84
@@ -2349,13 +2337,13 @@ Warning (10230): Verilog HDL assignment warning at display.sv(87): truncated val
 Warning (10230): Verilog HDL assignment warning at display.sv(88): truncated value with size 32 to match size of target (4) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/display.sv Line: 88
 Warning (10230): Verilog HDL assignment warning at display.sv(89): truncated value with size 32 to match size of target (4) File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/display.sv Line: 89
 Info (12128): Elaborating entity "seven_seg" for hierarchy "display:u_display|seven_seg:u_digit0" File: C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/display.sv Line: 54
-Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (144001): Generated suppressed messages file C:/Users/jiaho/Documents/Github/Merchants-Assignment2/FFT2/output_files/FFT_stream.map.smsg
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 81 warnings
-    Info: Peak virtual memory: 4969 megabytes
-    Info: Processing ended: Thu Oct 09 02:52:31 2025
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:16
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 73 warnings
+    Info: Peak virtual memory: 4961 megabytes
+    Info: Processing ended: Thu Oct 09 11:49:06 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:15
 
 
 +--------------------------------------------+

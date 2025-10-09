@@ -1,0 +1,79 @@
+module pixel_value_filter (
+    input  logic        clk,
+    input  logic        reset,
+
+    // Avalon-ST Input
+    input  logic [29:0] data_in,         // Pixel input from VGA Face source
+    input  logic        startofpacket_in,// Start of packet signal
+    input  logic        endofpacket_in,  // End of packet signal
+    input  logic        valid_in,        // Input data is valid
+    output logic        ready_in,        // We are ready for signal
+
+    // Avalon-ST Output
+    output logic [29:0] data_out,         // Pixel input to VGA
+    output logic        startofpacket_out,// Start of packet signal
+    output logic        endofpacket_out,  // End of packet signal
+    output logic        valid_out,        // Data valid signal
+    input  logic        ready_out         // Data ready signal from VGA
+);
+
+    // Extract RGB components from 30-bit input
+    logic [9:0] r_in, g_in, b_in;
+    logic [9:0] r_filtered, g_filtered, b_filtered;
+
+    // Pipeline registers for Avalon-ST signals
+    logic startofpacket_reg;
+    logic endofpacket_reg;
+    logic valid_reg;
+
+    // Fixed intensity value for testing
+    // 128 = half brightness (clearly visible dimming)
+    // 64 = quarter brightness (very dim)
+    // 255 = full brightness (no change)
+    localparam logic [7:0] INTENSITY = 8'd128;
+
+    // Extract RGB components from input
+    // Format: {R[9:0], G[9:0], B[9:0]}
+    assign r_in = data_in[29:20];
+    assign g_in = data_in[19:10];
+    assign b_in = data_in[9:0];
+
+    // Ready signal - we're ready for data (input) when downstream is ready (for our output)
+    assign ready_in = ready_out;
+
+    // Brightness adjustment logic
+    // Multiply each channel by intensity, then divide by 256 (right shift by 8)
+    // This scales the pixel value: pixel_out = pixel_in × (intensity / 256)
+    logic [17:0] r_mult, g_mult, b_mult;  // 10-bit × 8-bit = 18-bit result
+    
+    assign r_mult = r_in * INTENSITY;
+    assign g_mult = g_in * INTENSITY;
+    assign b_mult = b_in * INTENSITY;
+    
+    // Divide by 256 (right shift by 8) to get final 10-bit values
+    assign r_filtered = r_mult[17:8];
+    assign g_filtered = g_mult[17:8];
+    assign b_filtered = b_mult[17:8];
+
+    // Pipeline the control signals to align with the processed data
+    // Only update when there's a valid handshake
+    always_ff @(posedge clk) begin
+        if (reset) begin
+            startofpacket_reg <= 1'b0;
+            endofpacket_reg   <= 1'b0;
+            valid_reg         <= 1'b0;
+        end else if (ready_out) begin
+            // Only update when downstream is ready
+            startofpacket_reg <= startofpacket_in;
+            endofpacket_reg   <= endofpacket_in;
+            valid_reg         <= valid_in;
+        end
+    end
+
+    // Assign outputs
+    assign data_out = {r_filtered, g_filtered, b_filtered};
+    assign startofpacket_out = startofpacket_reg;
+    assign endofpacket_out   = endofpacket_reg;
+    assign valid_out         = valid_reg;
+
+endmodule

@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at convolution_2d_filter.sv(108): always construct contains both blocking and non-blocking assignments File: C:/Users/callu/Documents/MTRX3700/Quartus_Projects/testingass2/convolution_2d_filter.sv Line: 108

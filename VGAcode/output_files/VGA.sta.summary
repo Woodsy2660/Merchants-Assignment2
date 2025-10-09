@@ -1,0 +1,53 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'u_vga|video_pll_0|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
+Slack : -64.082
+TNS   : -1519.957
+
+Type  : Slow 1200mV 85C Model Hold 'u_vga|video_pll_0|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.819
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'u_vga|video_pll_0|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
+Slack : 19.616
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'u_vga|video_pll_0|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
+Slack : -54.075
+TNS   : -1282.082
+
+Type  : Slow 1200mV 0C Model Hold 'u_vga|video_pll_0|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.799
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'u_vga|video_pll_0|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
+Slack : 19.633
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'u_vga|video_pll_0|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
+Slack : -11.216
+TNS   : -257.361
+
+Type  : Fast 1200mV 0C Model Hold 'u_vga|video_pll_0|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.400
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'u_vga|video_pll_0|video_pll|PLL_for_DE_Series_Boards|auto_generated|pll1|clk[1]'
+Slack : 19.749
+TNS   : 0.000
+
+------------------------------------------------------------

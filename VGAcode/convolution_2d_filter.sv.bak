@@ -1,0 +1,207 @@
+module convolution_2d_filter #(
+    parameter WIDTH = 640,  // Image width
+    parameter HEIGHT = 480  // Image height
+)(
+    input  logic        clk,
+    input  logic        reset,
+    
+    // Kernel coefficients (3x3)
+    input  logic signed [7:0] k11, k12, k13,
+    input  logic signed [7:0] k21, k22, k23,
+    input  logic signed [7:0] k31, k32, k33,
+    
+    // Avalon-ST Input
+    input  logic [29:0] data_in,         // 30-bit RGB pixel input (from VGA Face)
+    input  logic        startofpacket_in,
+    input  logic        endofpacket_in,
+    input  logic        valid_in,
+    output logic        ready_out,
+    
+    // Avalon-ST Output
+    output logic [29:0] data_out,        // 30-bit RGB pixel output (to brightness filter)
+    output logic        startofpacket_out,
+    output logic        endofpacket_out,
+    output logic        valid_out,
+    input  logic        ready_in
+);
+
+    // Line buffers for storing image rows (store 24-bit RGB, extract from 30-bit input)
+    logic [23:0] line0 [WIDTH-1:0];
+    logic [23:0] line1 [WIDTH-1:0];
+    logic [23:0] line2 [WIDTH-1:0];
+    
+    // 3x3 pixel window registers
+    logic [23:0] p11, p12, p13;  // Top row
+    logic [23:0] p21, p22, p23;  // Middle row
+    logic [23:0] p31, p32, p33;  // Bottom row
+    
+    // Position tracking
+    logic [9:0] x_pos;  // 0 to WIDTH-1
+    logic [8:0] y_pos;  // 0 to HEIGHT-1
+    logic [18:0] pixel_count;
+    
+    // Extract 24-bit RGB from 30-bit input (remove padding)
+    logic [23:0] pixel_in;
+    assign pixel_in = {data_in[29:22], data_in[19:12], data_in[9:2]};
+    
+    // Pipeline delay for Avalon-ST signals
+    // Delay = 2 rows + 2 pixels for window to fill
+    localparam DELAY = WIDTH * 2 + 2;
+    logic startofpacket_delay [DELAY:0];
+    logic endofpacket_delay [DELAY:0];
+    logic valid_delay [DELAY:0];
+    
+    // Ready signal - we're ready when downstream is ready
+    assign ready_out = ready_in;
+    
+    // Extract RGB channels from 24-bit pixel for processing
+    logic [7:0] r11, r12, r13, r21, r22, r23, r31, r32, r33;
+    logic [7:0] g11, g12, g13, g21, g22, g23, g31, g32, g33;
+    logic [7:0] b11, b12, b13, b21, b22, b23, b31, b32, b33;
+    
+    assign {r11, g11, b11} = p11;
+    assign {r12, g12, b12} = p12;
+    assign {r13, g13, b13} = p13;
+    assign {r21, g21, b21} = p21;
+    assign {r22, g22, b22} = p22;
+    assign {r23, g23, b23} = p23;
+    assign {r31, g31, b31} = p31;
+    assign {r32, g32, b32} = p32;
+    assign {r33, g33, b33} = p33;
+    
+    // Convolution results for each channel
+    logic signed [15:0] r_conv, g_conv, b_conv;
+    logic [7:0] r_out, g_out, b_out;
+    
+    // Shift line buffers and update pixel window
+    always_ff @(posedge clk) begin
+        if (reset) begin
+            pixel_count <= 0;
+            x_pos <= 0;
+            y_pos <= 0;
+            
+            // Clear window
+            p11 <= 24'h0; p12 <= 24'h0; p13 <= 24'h0;
+            p21 <= 24'h0; p22 <= 24'h0; p23 <= 24'h0;
+            p31 <= 24'h0; p32 <= 24'h0; p33 <= 24'h0;
+            
+            // Clear delay pipeline
+            for (int i = 0; i <= DELAY; i++) begin
+                startofpacket_delay[i] <= 1'b0;
+                endofpacket_delay[i] <= 1'b0;
+                valid_delay[i] <= 1'b0;
+            end
+            
+        end else if (valid_in && ready_in) begin
+            // Update position
+            if (endofpacket_in) begin
+                pixel_count <= 0;
+                x_pos <= 0;
+                y_pos <= 0;
+            end else begin
+                pixel_count <= pixel_count + 1;
+                if (x_pos == WIDTH - 1) begin
+                    x_pos <= 0;
+                    y_pos <= y_pos + 1;
+                end else begin
+                    x_pos <= x_pos + 1;
+                end
+            end
+            
+            // Shift line buffers
+            line0[x_pos] <= pixel_in;
+            line1[x_pos] <= line0[x_pos];
+            line2[x_pos] <= line1[x_pos];
+            
+            // Shift pixel window horizontally
+            p11 <= p12;
+            p12 <= p13;
+            p21 <= p22;
+            p22 <= p23;
+            p31 <= p32;
+            p32 <= p33;
+            
+            // Load new column from line buffers
+            p13 <= line2[x_pos];
+            p23 <= line1[x_pos];
+            p33 <= line0[x_pos];
+            
+            // Shift delay pipeline
+            startofpacket_delay[0] <= startofpacket_in;
+            endofpacket_delay[0] <= endofpacket_in;
+            valid_delay[0] <= valid_in;
+            
+            for (int i = 1; i <= DELAY; i++) begin
+                startofpacket_delay[i] <= startofpacket_delay[i-1];
+                endofpacket_delay[i] <= endofpacket_delay[i-1];
+                valid_delay[i] <= valid_delay[i-1];
+            end
+        end
+    end
+    
+    // Convolution computation for each color channel
+    always_comb begin
+        // Red channel convolution
+        r_conv = $signed({1'b0, r11}) * $signed(k11) +
+                 $signed({1'b0, r12}) * $signed(k12) +
+                 $signed({1'b0, r13}) * $signed(k13) +
+                 $signed({1'b0, r21}) * $signed(k21) +
+                 $signed({1'b0, r22}) * $signed(k22) +
+                 $signed({1'b0, r23}) * $signed(k23) +
+                 $signed({1'b0, r31}) * $signed(k31) +
+                 $signed({1'b0, r32}) * $signed(k32) +
+                 $signed({1'b0, r33}) * $signed(k33);
+        
+        // Green channel convolution
+        g_conv = $signed({1'b0, g11}) * $signed(k11) +
+                 $signed({1'b0, g12}) * $signed(k12) +
+                 $signed({1'b0, g13}) * $signed(k13) +
+                 $signed({1'b0, g21}) * $signed(k21) +
+                 $signed({1'b0, g22}) * $signed(k22) +
+                 $signed({1'b0, g23}) * $signed(k23) +
+                 $signed({1'b0, g31}) * $signed(k31) +
+                 $signed({1'b0, g32}) * $signed(k32) +
+                 $signed({1'b0, g33}) * $signed(k33);
+        
+        // Blue channel convolution
+        b_conv = $signed({1'b0, b11}) * $signed(k11) +
+                 $signed({1'b0, b12}) * $signed(k12) +
+                 $signed({1'b0, b13}) * $signed(k13) +
+                 $signed({1'b0, b21}) * $signed(k21) +
+                 $signed({1'b0, b22}) * $signed(k22) +
+                 $signed({1'b0, b23}) * $signed(k23) +
+                 $signed({1'b0, b31}) * $signed(k31) +
+                 $signed({1'b0, b32}) * $signed(k32) +
+                 $signed({1'b0, b33}) * $signed(k33);
+        
+        // Clamp to 0-255 range (handle negative and overflow)
+        if (r_conv < 0)
+            r_out = 8'h00;
+        else if (r_conv > 255)
+            r_out = 8'hFF;
+        else
+            r_out = r_conv[7:0];
+        
+        if (g_conv < 0)
+            g_out = 8'h00;
+        else if (g_conv > 255)
+            g_out = 8'hFF;
+        else
+            g_out = g_conv[7:0];
+        
+        if (b_conv < 0)
+            b_out = 8'h00;
+        else if (b_conv > 255)
+            b_out = 8'hFF;
+        else
+            b_out = b_conv[7:0];
+    end
+    
+    // Output assignment with proper delay
+    // Repack to 30-bit format with padding
+    assign data_out = {r_out, 2'b00, g_out, 2'b00, b_out, 2'b00};
+    assign startofpacket_out = startofpacket_delay[DELAY];
+    assign endofpacket_out = endofpacket_delay[DELAY];
+    assign valid_out = valid_delay[DELAY];
+
+endmodule

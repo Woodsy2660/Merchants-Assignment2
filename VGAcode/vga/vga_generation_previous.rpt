@@ -1,0 +1,57 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\callu\Documents\MTRX3700\Quartus_Projects\testingass2\vga.qsys --block-symbol-file --output-directory=C:\Users\callu\Documents\MTRX3700\Quartus_Projects\testingass2\vga --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading testingass2/vga.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 20.1]
+Progress: Parameterizing module clk_0
+Progress: Adding convolution_filter_wrapper_0 [convolution_filter_wrapper 1.0]
+Progress: Parameterizing module convolution_filter_wrapper_0
+Progress: Adding pixel_value_filter_0 [pixel_value_filter 1.0]
+Progress: Parameterizing module pixel_value_filter_0
+Progress: Adding vga_face_0 [vga_face 1.0]
+Progress: Parameterizing module vga_face_0
+Progress: Adding video_pll_0 [altera_up_avalon_video_pll 18.0]
+Progress: Parameterizing module video_pll_0
+Progress: Adding video_vga_controller_0 [altera_up_avalon_video_vga_controller 18.0]
+Progress: Parameterizing module video_vga_controller_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: vga.video_vga_controller_0: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\callu\Documents\MTRX3700\Quartus_Projects\testingass2\vga.qsys --synthesis=VERILOG --output-directory=C:\Users\callu\Documents\MTRX3700\Quartus_Projects\testingass2\vga\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading testingass2/vga.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 20.1]
+Progress: Parameterizing module clk_0
+Progress: Adding convolution_filter_wrapper_0 [convolution_filter_wrapper 1.0]
+Progress: Parameterizing module convolution_filter_wrapper_0
+Progress: Adding pixel_value_filter_0 [pixel_value_filter 1.0]
+Progress: Parameterizing module pixel_value_filter_0
+Progress: Adding vga_face_0 [vga_face 1.0]
+Progress: Parameterizing module vga_face_0
+Progress: Adding video_pll_0 [altera_up_avalon_video_pll 18.0]
+Progress: Parameterizing module video_pll_0
+Progress: Adding video_vga_controller_0 [altera_up_avalon_video_vga_controller 18.0]
+Progress: Parameterizing module video_vga_controller_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: vga.video_vga_controller_0: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
+Info: vga: Generating vga "vga" for QUARTUS_SYNTH
+Info: pixel_value_filter_0: "vga" instantiated pixel_value_filter "pixel_value_filter_0"
+Info: vga_face_0: "vga" instantiated vga_face "vga_face_0"
+Info: video_pll_0: "vga" instantiated altera_up_avalon_video_pll "video_pll_0"
+Info: video_vga_controller_0: Starting Generation of VGA Controller
+Info: video_vga_controller_0: "vga" instantiated altera_up_avalon_video_vga_controller "video_vga_controller_0"
+Info: rst_controller: "vga" instantiated altera_reset_controller "rst_controller"
+Info: video_pll: "video_pll_0" instantiated altera_up_altpll "video_pll"
+Info: reset_from_locked: "video_pll_0" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
+Info: vga: Done "vga" with 8 modules, 11 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

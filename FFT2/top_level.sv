@@ -140,26 +140,30 @@ module top_level #(
 	logic quiet_period;
 	
 	
-	assign quiet_period = ~(beat_pulse | snare_pulse | hihat_pulse);
+	logic audio_input_ready;
+	logic [7:0] snr_db;
+	logic [15:0] signal_rms, noise_rms;
+	logic output_valid, output_ready;
 
 	snr_calculator #(
-		 .DATA_WIDTH(16),     // set the desired data width
-		 .SNR_WIDTH(8),       // set the width of SNR output
-		 .ALPHA_SHORT(16'd3277), // short MA alpha (Q1.15 fixed point)
-		 .ALPHA_LONG(16'd655)    // long MA alpha (Q1.15 fixed point)
+		  .DATA_WIDTH(16),
+		  .SNR_WIDTH(8),
+		  .ALPHA_SHORT(16'd3277),
+		  .ALPHA_LONG(16'd655)
 	) u_snr (
-		 .clk(clk),
-		 .reset(reset),
-		 .quiet_period(quiet_period),
-		 .audio_input(audio_input),
-		 .audio_input_valid(audio_input_valid),
-		 .audio_input_ready(audio_input_ready),
-		 .snr_db(snr_db),
-		 .signal_rms(signal_rms),
-		 .noise_rms(noise_rms),
-		 .output_valid(output_valid),
-		 .output_ready(output_ready)
+		  .clk(adc_clk),
+		  .reset(reset),
+		  .quiet_period(quiet_period),
+		  .audio_input(audio_input_data),
+		  .audio_input_valid(audio_input_valid),
+		  .audio_input_ready(audio_input_ready),
+		  .snr_db(snr_db),
+		  .signal_rms(signal_rms),
+		  .noise_rms(noise_rms),
+		  .output_valid(output_valid),
+		  .output_ready(output_ready)
 	);
+
 	
 	// LED Display for Beat Visualization
 	beat_led_display u_beat_led_display (

@@ -1,0 +1,160 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 432 416)
+	(text "vga" (rect 207 -1 222 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 400 20 412)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 46 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 176 72)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "filter_select_filter_select[2..0]" (rect 0 0 115 12)(font "Arial" (font_size 8)))
+		(text "filter_select_filter_select[2..0]" (rect 4 101 202 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 176 112)(line_width 3))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "intensity_intensity[7..0]" (rect 0 0 89 12)(font "Arial" (font_size 8)))
+		(text "intensity_intensity[7..0]" (rect 4 141 154 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 176 152)(line_width 3))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "kernel_select_kernel_select[2..0]" (rect 0 0 129 12)(font "Arial" (font_size 8)))
+		(text "kernel_select_kernel_select[2..0]" (rect 4 181 202 192)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 176 192)(line_width 3))
+	)
+	(port
+		(pt 0 232)
+		(input)
+		(text "reset_reset_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 221 82 232)(font "Arial" (font_size 8)))
+		(line (pt 0 232)(pt 176 232)(line_width 1))
+	)
+	(port
+		(pt 0 272)
+		(output)
+		(text "vga_CLK" (rect 0 0 41 12)(font "Arial" (font_size 8)))
+		(text "vga_CLK" (rect 4 261 46 272)(font "Arial" (font_size 8)))
+		(line (pt 0 272)(pt 176 272)(line_width 1))
+	)
+	(port
+		(pt 0 288)
+		(output)
+		(text "vga_HS" (rect 0 0 34 12)(font "Arial" (font_size 8)))
+		(text "vga_HS" (rect 4 277 40 288)(font "Arial" (font_size 8)))
+		(line (pt 0 288)(pt 176 288)(line_width 1))
+	)
+	(port
+		(pt 0 304)
+		(output)
+		(text "vga_VS" (rect 0 0 35 12)(font "Arial" (font_size 8)))
+		(text "vga_VS" (rect 4 293 40 304)(font "Arial" (font_size 8)))
+		(line (pt 0 304)(pt 176 304)(line_width 1))
+	)
+	(port
+		(pt 0 320)
+		(output)
+		(text "vga_BLANK" (rect 0 0 55 12)(font "Arial" (font_size 8)))
+		(text "vga_BLANK" (rect 4 309 58 320)(font "Arial" (font_size 8)))
+		(line (pt 0 320)(pt 176 320)(line_width 1))
+	)
+	(port
+		(pt 0 336)
+		(output)
+		(text "vga_SYNC" (rect 0 0 48 12)(font "Arial" (font_size 8)))
+		(text "vga_SYNC" (rect 4 325 52 336)(font "Arial" (font_size 8)))
+		(line (pt 0 336)(pt 176 336)(line_width 1))
+	)
+	(port
+		(pt 0 352)
+		(output)
+		(text "vga_R[7..0]" (rect 0 0 49 12)(font "Arial" (font_size 8)))
+		(text "vga_R[7..0]" (rect 4 341 70 352)(font "Arial" (font_size 8)))
+		(line (pt 0 352)(pt 176 352)(line_width 3))
+	)
+	(port
+		(pt 0 368)
+		(output)
+		(text "vga_G[7..0]" (rect 0 0 48 12)(font "Arial" (font_size 8)))
+		(text "vga_G[7..0]" (rect 4 357 70 368)(font "Arial" (font_size 8)))
+		(line (pt 0 368)(pt 176 368)(line_width 3))
+	)
+	(port
+		(pt 0 384)
+		(output)
+		(text "vga_B[7..0]" (rect 0 0 47 12)(font "Arial" (font_size 8)))
+		(text "vga_B[7..0]" (rect 4 373 70 384)(font "Arial" (font_size 8)))
+		(line (pt 0 384)(pt 176 384)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 161 43 340 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 181 67 380 144)(font "Arial" (color 0 0 0)))
+		(text "filter_select" (rect 108 83 294 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "filter_select" (rect 181 107 440 224)(font "Arial" (color 0 0 0)))
+		(text "intensity" (rect 129 123 312 259)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "intensity" (rect 181 147 416 304)(font "Arial" (color 0 0 0)))
+		(text "kernel_select" (rect 99 163 276 339)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "kernel_select" (rect 181 187 440 384)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 147 203 324 419)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 181 227 404 464)(font "Arial" (color 0 0 0)))
+		(text "vga" (rect 157 243 332 499)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "CLK" (rect 181 267 380 544)(font "Arial" (color 0 0 0)))
+		(text "HS" (rect 181 283 374 576)(font "Arial" (color 0 0 0)))
+		(text "VS" (rect 181 299 374 608)(font "Arial" (color 0 0 0)))
+		(text "BLANK" (rect 181 315 392 640)(font "Arial" (color 0 0 0)))
+		(text "SYNC" (rect 181 331 386 672)(font "Arial" (color 0 0 0)))
+		(text "R" (rect 181 347 368 704)(font "Arial" (color 0 0 0)))
+		(text "G" (rect 181 363 368 736)(font "Arial" (color 0 0 0)))
+		(text "B" (rect 181 379 368 768)(font "Arial" (color 0 0 0)))
+		(text " vga " (rect 413 400 856 810)(font "Arial" ))
+		(line (pt 176 32)(pt 256 32)(line_width 1))
+		(line (pt 256 32)(pt 256 400)(line_width 1))
+		(line (pt 176 400)(pt 256 400)(line_width 1))
+		(line (pt 176 32)(pt 176 400)(line_width 1))
+		(line (pt 177 52)(pt 177 76)(line_width 1))
+		(line (pt 178 52)(pt 178 76)(line_width 1))
+		(line (pt 177 92)(pt 177 116)(line_width 1))
+		(line (pt 178 92)(pt 178 116)(line_width 1))
+		(line (pt 177 132)(pt 177 156)(line_width 1))
+		(line (pt 178 132)(pt 178 156)(line_width 1))
+		(line (pt 177 172)(pt 177 196)(line_width 1))
+		(line (pt 178 172)(pt 178 196)(line_width 1))
+		(line (pt 177 212)(pt 177 236)(line_width 1))
+		(line (pt 178 212)(pt 178 236)(line_width 1))
+		(line (pt 177 252)(pt 177 388)(line_width 1))
+		(line (pt 178 252)(pt 178 388)(line_width 1))
+		(line (pt 0 0)(pt 432 0)(line_width 1))
+		(line (pt 432 0)(pt 432 416)(line_width 1))
+		(line (pt 0 416)(pt 432 416)(line_width 1))
+		(line (pt 0 0)(pt 0 416)(line_width 1))
+	)
+)
